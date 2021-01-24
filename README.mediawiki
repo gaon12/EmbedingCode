@@ -7,24 +7,24 @@
 |update      = 2020-10-14
 |mediawiki   = 1.29+
 |php         = 7.0+
-|download    = {{GitlabDownload|HydraWiki/extensions|embedvideo}}
-|image       = EmbedVideoExample1.png
+|download    = {{GitlabDownload|HydraWiki/extensions|embedingcode}}
+|image       = EmbedingCodeExample1.png
 |imagesize   = 350px
 |hook1       = ParserFirstCallInit
 |hook2       = LocalisationCacheRecache
 |description = Adds a parser function called <code>#ev</code> for embedding video clips from popular video sharing services.
-|example     = [https://help.gamepedia.com/Extension:EmbedVideo/Example Gamepedia Help Wiki]
-|vagrant-role      = embedvideo
+|example     = [https://help.gamepedia.com/Extension:EmbedingCode/Example Gamepedia Help Wiki]
+|vagrant-role      = embedingcode
 }}
 
-The '''EmbedVideo''' extension adds a parser function called <code>#ev</code> for embedding video clips from over 24 popular video sharing services in multiple languages and countries.  It also adds video and audio media handlers to support transforming standard <nowiki>[[File:Example.mp4]]</nowiki> file links into embedded HTML5 <nowiki><video></nowiki> and <nowiki><audio></nowiki> tags.
+The '''EmbedingCode''' extension adds a parser function called <code>#ev</code> for embedding video clips from over 24 popular video sharing services in multiple languages and countries.  It also adds video and audio media handlers to support transforming standard <nowiki>[[File:Example.mp4]]</nowiki> file links into embedded HTML5 <nowiki><video></nowiki> and <nowiki><audio></nowiki> tags.
 
-;Project Homepage: [https://gitlab.com/hydrawiki/extensions/EmbedVideo Documentation at GitLab]
-;Source Code: [https://gitlab.com/hydrawiki/extensions/EmbedVideo Source code at GitLab]
-;Bugs:[https://gitlab.com/hydrawiki/extensions/EmbedVideo/issues Issues at GitLab]
-;Licensing: EmbedVideo is released under [http://www.opensource.org/licenses/mit-license.php The MIT License].
+;Project Homepage: [https://gitlab.com/hydrawiki/extensions/EmbedingCode Documentation at GitLab]
+;Source Code: [https://gitlab.com/hydrawiki/extensions/EmbedingCode Source code at GitLab]
+;Bugs:[https://gitlab.com/hydrawiki/extensions/EmbedingCode/issues Issues at GitLab]
+;Licensing: EmbedingCode is released under [http://www.opensource.org/licenses/mit-license.php The MIT License].
 
-<span style="font-weight: bold; color: darkred;">Notice:</span> As of the 2.x series the EmbedVideo extension has a new maintainer and an entirely rewritten code base.  It retains backwards compatibility with EmbedVideo 1.0 and EmbedVideoPlus.
+<span style="font-weight: bold; color: darkred;">Notice:</span> As of the 2.x series the EmbedingCode extension has a new maintainer and an entirely rewritten code base.  It retains backwards compatibility with EmbedingCode 1.0 and EmbedingCodePlus.
 
 ==Usage==
 
@@ -41,7 +41,7 @@ To specify the start and end timestamps in the media use the start and end param
 
 === Tags ===
 
-The EmbedVideo parser function expects to be called in any of the following ways:
+The EmbedingCode parser function expects to be called in any of the following ways:
 
 ====<code>#ev</code> - Classic parser tag====
 * <code><nowiki>{{#ev:service|id}}</nowiki></code>
@@ -72,10 +72,10 @@ The <nowiki>#evu</nowiki> parser tag is like the <nowiki>#evt</nowiki> tag, but 
 |alignment=right
 }}</nowiki></pre>
 
-====<code><embedvideo></code> - Tag hook====
-Videos can easily be embedded with the <nowiki><embedvideo></embedvideo></nowiki> tag hook.  The ID/URL goes as the input between the tags and parameters can be added as the tag arguments.
+====<code><embedingcode></code> - Tag hook====
+Videos can easily be embedded with the <nowiki><embedingcode></embedingcode></nowiki> tag hook.  The ID/URL goes as the input between the tags and parameters can be added as the tag arguments.
 
-<pre><nowiki><embedvideo service="youtube">https://www.youtube.com/watch?v=StPSujfX0YI</embedvideo></nowiki></pre>
+<pre><nowiki><embedingcode service="youtube">https://www.youtube.com/watch?v=StPSujfX0YI</embedingcode></nowiki></pre>
 
 Alternativly, you can also use the service id as the tag (assuming another extension isn't already using this tag).
 
@@ -100,7 +100,7 @@ Alternativly, you can also use the service id as the tag (assuming another exten
 | '''Required:''' no, '''Default:''' <code>640</code>
 :Dimensions in pixels to size the embed container.  The standard format is width x height where either can be omitted, but the <code>x</code> must proceed height to indicate it as the height.
 :Examples: <code>480</code>, <code>480x320</code>, <code>x320</code>.  If the height is not provided it will be calculated automatically from the width and service default ratio.
-:Some services such as ''Gfycat'' do not have standard heights and should be specified for each embed.  <code>$wgEmbedVideoDefaultWidth</code> can be set in <code>LocalSettings.php</code> to override the default width.
+:Some services such as ''Gfycat'' do not have standard heights and should be specified for each embed.  <code>$wgEmbedingCodeDefaultWidth</code> can be set in <code>LocalSettings.php</code> to override the default width.
 |-
 | <code>alignment="<nowiki>[left|center|right|inline]</nowiki>"</code>
 | '''Required:''' no, '''Default:''' <code>none</code>
@@ -130,7 +130,7 @@ Alternativly, you can also use the service id as the tag (assuming another exten
 
 === Examples ===
 
-[[File:EmbedVideoExample1.png|thumb|Example #1]]
+[[File:EmbedingCodeExample1.png|thumb|Example #1]]
 
 For example, a video from YouTube uses the 'youtube' service selector. You can specify either the raw ID:
 <pre>{{#ev:youtube|StPSujfX0YI}}</pre>
@@ -139,7 +139,7 @@ Or specify the full URL:
 
 
 
-[[File:EmbedVideoExample2.jpg|thumb|Example #2|link=Special:FilePath/EmbedVideoExample2.jpg]]
+[[File:EmbedingCodeExample2.jpg|thumb|Example #2|link=Special:FilePath/EmbedingCodeExample2.jpg]]
 
 
 
@@ -281,7 +281,7 @@ Creating a video list allows video links to create a playlist on the fly using t
 
 == Supported services ==
 
-As of version 2.x, EmbedVideo supports embedding video content from the following services:
+As of version 2.x, EmbedingCode supports embedding video content from the following services:
 <div style="overflow: scroll;width: 100%;">
 {| class="wikitable"
 |-
@@ -529,7 +529,7 @@ As of version 2.x, EmbedVideo supports embedding video content from the followin
 
 {{ExtensionInstall
  |registration=required
- |download-link=[https://gitlab.com/hydrawiki/extensions/EmbedVideo/-/archive/v2.9.0/EmbedVideo-v2.9.0.zip Download]
+ |download-link=[https://gitlab.com/hydrawiki/extensions/EmbedingCode/-/archive/v2.9.0/EmbedingCode-v2.9.0.zip Download]
  |custom-steps=* [[#Configuration|Configure as required]]
 }}
 
@@ -541,27 +541,27 @@ As of version 2.x, EmbedVideo supports embedding video content from the followin
 ! Default Value
 ! Description
 |--
-| <code>$wgEmbedVideoAddFileExtensions</code>
+| <code>$wgEmbedingCodeAddFileExtensions</code>
 | <code>true</code>
 | Boolean - Enable or disable adding video/audio file extensions to the list of allowable files to be uploaded.
 |--
-| <code>$wgEmbedVideoEnableVideoHandler</code>
+| <code>$wgEmbedingCodeEnableVideoHandler</code>
 | <code>true</code>
 | Boolean - Enable or disable the video media handlers for displaying embedded video in articles.
 |--
-| <code>$wgEmbedVideoEnableAudioHandler</code>
+| <code>$wgEmbedingCodeEnableAudioHandler</code>
 | <code>true</code>
 | Boolean - Enable or disable the audio media handlers for displaying embedded audio in articles.
 |--
-| <code>$wgEmbedVideoDefaultWidth</code>
+| <code>$wgEmbedingCodeDefaultWidth</code>
 | <code>''</code>
 | Integer - Globally override the default width of video players.  When not set this uses the video service's default width which is typically 640 pixels.
 |--
-| <code>$wgEmbedVideoMinWidth</code>
+| <code>$wgEmbedingCodeMinWidth</code>
 | <code>''</code>
 | Integer - Minimum width of video players.  Widths specified below this value will be automatically bounded to it.
 |--
-| <code>$wgEmbedVideoMaxWidth</code>
+| <code>$wgEmbedingCodeMaxWidth</code>
 | <code>''</code>
 | Integer - Maximum width of video players.  Widths specified above this value will be automatically bounded to it.
 |--
@@ -621,15 +621,15 @@ As of version 2.x, EmbedVideo supports embedding video content from the followin
 
 ; v2.6.1
 * Added new configuration options to disable adding media handlers and file extensions.
-** https://gitlab.com/hydrawiki/extensions/EmbedVideo/issues/76
+** https://gitlab.com/hydrawiki/extensions/EmbedingCode/issues/76
 * Fixed an uninitialized array.
-** https://gitlab.com/hydrawiki/extensions/EmbedVideo/issues/77
+** https://gitlab.com/hydrawiki/extensions/EmbedingCode/issues/77
 * Fixed undefined indexes in the AudioHandler class.
-** https://gitlab.com/hydrawiki/extensions/EmbedVideo/issues/78
+** https://gitlab.com/hydrawiki/extensions/EmbedingCode/issues/78
 * Fixed class properties that were unintentionally declared as static.
-** https://gitlab.com/hydrawiki/extensions/EmbedVideo/issues/75
+** https://gitlab.com/hydrawiki/extensions/EmbedingCode/issues/75
 * Fixed RTL language issues with CSS.
-** https://gitlab.com/hydrawiki/extensions/EmbedVideo/pull/73
+** https://gitlab.com/hydrawiki/extensions/EmbedingCode/pull/73
 
 
 ==Developer notes==
@@ -650,7 +650,7 @@ And then call it like this:
 
 ===Reporting bugs===
 
-There is an issue tracker set up on the [https://gitlab.com/hydrawiki/extensions/EmbedVideo/issues GitLab project page].
+There is an issue tracker set up on the [https://gitlab.com/hydrawiki/extensions/EmbedingCode/issues GitLab project page].
 
 ===Contributing===
 
@@ -658,7 +658,7 @@ Bug reports, feature requests, and patches are always welcome.  New contributors
 
 ==Weblinks==
 
-* [http://help.gamepedia.com/Extension:EmbedVideo/Example Gamepedia Help Wiki] / [http://fr.wikimini.org/wiki/Aide:Ins%C3%A9rer_une_vid%C3%A9o French] / [http://krefeld-wiki.de/wiki/Hilfe:Video German]
+* [http://help.gamepedia.com/Extension:EmbedingCode/Example Gamepedia Help Wiki] / [http://fr.wikimini.org/wiki/Aide:Ins%C3%A9rer_une_vid%C3%A9o French] / [http://krefeld-wiki.de/wiki/Hilfe:Video German]
 
 [[Category:Video player extensions]]
 [[Category:YouTube extensions]]

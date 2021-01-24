@@ -1,11 +1,11 @@
 <?php
 /**
- * EmbedVideo
- * EmbedVideo Magic Words
+ * EmbedingCode
+ * EmbedingCode Magic Words
  *
  * @license MIT
- * @package EmbedVideo
- * @link    https://www.mediawiki.org/wiki/Extension:EmbedVideo
+ * @package EmbedingCode
+ * @link    https://www.mediawiki.org/wiki/Extension:EmbedingCode
  **/
 
 $magicWords = [];
@@ -21,7 +21,7 @@ $magicWords['en'] = [
 	'ev_end'	=> [0, 'end=$1'],
 ];
 
-foreach (\EmbedVideo\VideoService::getAvailableServices() as $service) {
+foreach (\EmbedingCode\VideoService::getAvailableServices() as $service) {
 	if (!isset($magicWords['en'][$service])) {
 		$magicWords['en'][$service] = [0, $service];
 	}

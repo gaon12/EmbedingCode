@@ -3,15 +3,15 @@
 use MediaWiki\MediaWikiServices;
 
 /**
- * EmbedVideo
- * EmbedVideo Hooks
+ * EmbedingCode
+ * EmbedingCode Hooks
  *
  * @license MIT
- * @package EmbedVideo
- * @link    https://www.mediawiki.org/wiki/Extension:EmbedVideo
+ * @package EmbedingCode
+ * @link    https://www.mediawiki.org/wiki/Extension:EmbedingCode
  **/
 
-class EmbedVideoHooks {
+class EmbedingCodeHooks {
 	/**
 	 * Temporary storage for the current service object.
 	 *
@@ -72,34 +72,34 @@ class EmbedVideoHooks {
 	 * @return void
 	 */
 	public static function onExtension() {
-		global $wgEmbedVideoDefaultWidth, $wgMediaHandlers, $wgFileExtensions;
+		global $wgEmbedingCodeDefaultWidth, $wgMediaHandlers, $wgFileExtensions;
 
 		$config = MediaWikiServices::getInstance()->getConfigFactory()->makeConfig('main');
 
-		if (!isset($wgEmbedVideoDefaultWidth) && (isset($_SERVER['HTTP_X_MOBILE']) && $_SERVER['HTTP_X_MOBILE'] == 'true') && $_COOKIE['stopMobileRedirect'] != 1) {
+		if (!isset($wgEmbedingCodeDefaultWidth) && (isset($_SERVER['HTTP_X_MOBILE']) && $_SERVER['HTTP_X_MOBILE'] == 'true') && $_COOKIE['stopMobileRedirect'] != 1) {
 			// Set a smaller default width when in mobile view.
-			$wgEmbedVideoDefaultWidth = 320;
+			$wgEmbedingCodeDefaultWidth = 320;
 		}
 
-		if ($config->get('EmbedVideoEnableAudioHandler')) {
-			$wgMediaHandlers['application/ogg']		= 'EmbedVideo\AudioHandler';
-			$wgMediaHandlers['audio/flac']			= 'EmbedVideo\AudioHandler';
-			$wgMediaHandlers['audio/ogg']			= 'EmbedVideo\AudioHandler';
-			$wgMediaHandlers['audio/mpeg']			= 'EmbedVideo\AudioHandler';
-			$wgMediaHandlers['audio/mp4']			= 'EmbedVideo\AudioHandler';
-			$wgMediaHandlers['audio/wav']			= 'EmbedVideo\AudioHandler';
-			$wgMediaHandlers['audio/webm']			= 'EmbedVideo\AudioHandler';
-			$wgMediaHandlers['audio/x-flac']		= 'EmbedVideo\AudioHandler';
+		if ($config->get('EmbedingCodeEnableAudioHandler')) {
+			$wgMediaHandlers['application/ogg']		= 'EmbedingCode\AudioHandler';
+			$wgMediaHandlers['audio/flac']			= 'EmbedingCode\AudioHandler';
+			$wgMediaHandlers['audio/ogg']			= 'EmbedingCode\AudioHandler';
+			$wgMediaHandlers['audio/mpeg']			= 'EmbedingCode\AudioHandler';
+			$wgMediaHandlers['audio/mp4']			= 'EmbedingCode\AudioHandler';
+			$wgMediaHandlers['audio/wav']			= 'EmbedingCode\AudioHandler';
+			$wgMediaHandlers['audio/webm']			= 'EmbedingCode\AudioHandler';
+			$wgMediaHandlers['audio/x-flac']		= 'EmbedingCode\AudioHandler';
 		}
-		if ($config->get('EmbedVideoEnableVideoHandler')) {
-			$wgMediaHandlers['video/mp4']			= 'EmbedVideo\VideoHandler';
-			$wgMediaHandlers['video/ogg']			= 'EmbedVideo\VideoHandler';
-			$wgMediaHandlers['video/quicktime']		= 'EmbedVideo\VideoHandler';
-			$wgMediaHandlers['video/webm']			= 'EmbedVideo\VideoHandler';
-			$wgMediaHandlers['video/x-matroska']	= 'EmbedVideo\VideoHandler';
+		if ($config->get('EmbedingCodeEnableVideoHandler')) {
+			$wgMediaHandlers['video/mp4']			= 'EmbedingCode\VideoHandler';
+			$wgMediaHandlers['video/ogg']			= 'EmbedingCode\VideoHandler';
+			$wgMediaHandlers['video/quicktime']		= 'EmbedingCode\VideoHandler';
+			$wgMediaHandlers['video/webm']			= 'EmbedingCode\VideoHandler';
+			$wgMediaHandlers['video/x-matroska']	= 'EmbedingCode\VideoHandler';
 		}
 
-		if ($config->get('EmbedVideoAddFileExtensions')) {
+		if ($config->get('EmbedingCodeAddFileExtensions')) {
 			$wgFileExtensions[] = 'flac';
 			$wgFileExtensions[] = 'mkv';
 			$wgFileExtensions[] = 'mov';
@@ -121,28 +121,28 @@ class EmbedVideoHooks {
 	 * @return boolean	true
 	 */
 	public static function onParserFirstCallInit(Parser &$parser) {
-		$parser->setFunctionHook("ev", "EmbedVideoHooks::parseEV");
-		$parser->setFunctionHook("evt", "EmbedVideoHooks::parseEVT");
-		$parser->setFunctionHook("evp", "EmbedVideoHooks::parseEVP");
-		$parser->setFunctionHook("evu", "EmbedVideoHooks::parseEVU");
+		$parser->setFunctionHook("ev", "EmbedingCodeHooks::parseEV");
+		$parser->setFunctionHook("evt", "EmbedingCodeHooks::parseEVT");
+		$parser->setFunctionHook("evp", "EmbedingCodeHooks::parseEVP");
+		$parser->setFunctionHook("evu", "EmbedingCodeHooks::parseEVU");
 
-		$parser->setHook("embedvideo", "EmbedVideoHooks::parseEVTag");
-		$parser->setHook('evlplayer', "EmbedVideoHooks::parseEVLPlayer");
-		$parser->setFunctionHook('evl', "EmbedVideoHooks::parseEVL");
+		$parser->setHook("embedingcode", "EmbedingCodeHooks::parseEVTag");
+		$parser->setHook('evlplayer', "EmbedingCodeHooks::parseEVLPlayer");
+		$parser->setFunctionHook('evl', "EmbedingCodeHooks::parseEVL");
 
 		// don't step on VideoLink's toes.
 		if (!class_exists('FXVideoLink')) {
-			$parser->setHook('vplayer', "EmbedVideoHooks::parseEVLPlayer");
-			$parser->setFunctionHook('vlink', "EmbedVideoHooks::parseEVL");
+			$parser->setHook('vplayer', "EmbedingCodeHooks::parseEVLPlayer");
+			$parser->setFunctionHook('vlink', "EmbedingCodeHooks::parseEVL");
 		}
 
 		// smart handling of service name tags (if they aren't already implamented)
 		$tags = $parser->getTags();
-		$services = \EmbedVideo\VideoService::getAvailableServices();
+		$services = \EmbedingCode\VideoService::getAvailableServices();
 		$create = array_diff($services, $tags);
 		// We now have a list of services we can create tags for that aren't already implamented
 		foreach ($create as $service) {
-			$parser->setHook($service, "EmbedVideoHooks::parseServiceTag{$service}");
+			$parser->setHook($service, "EmbedingCodeHooks::parseServiceTag{$service}");
 		}
 
 		return true;
@@ -281,7 +281,7 @@ class EmbedVideoHooks {
 		$link = Xml::element('a', [
 			'href' => '#',
 			'data-video-json' => $json,
-			'class' => 'embedvideo-evl vplink'
+			'class' => 'embedingcode-evl vplink'
 		], $options['linktitle']);
 
 		$parser->getOutput()->addModules(['ext.embedVideo-evl', 'ext.embedVideo.styles']);
@@ -317,7 +317,7 @@ class EmbedVideoHooks {
 
 		$div = Html::rawElement('div', [
 			'id' => 'vplayerbox-' . $pid,
-			'class' => 'embedvideo-evlbox vplayerbox' . $class,
+			'class' => 'embedingcode-evlbox vplayerbox' . $class,
 			'data-size' => $w . 'x' . $h,
 			'style' => $style,
 		], $content);
@@ -359,7 +359,7 @@ class EmbedVideoHooks {
 		$host = strtolower($host);
 		$host = str_ireplace('www.', '', $host); // strip www from any hostname.
 
-		$map = \EmbedVideo\VideoService::getServiceHostMap();
+		$map = \EmbedingCode\VideoService::getServiceHostMap();
 
 		$service = false;
 
@@ -370,7 +370,7 @@ class EmbedVideoHooks {
 			} else {
 				// map by array.
 				foreach ($map[$host] as $possibleService) {
-					$evs = \EmbedVideo\VideoService::newFromName($possibleService);
+					$evs = \EmbedingCode\VideoService::newFromName($possibleService);
 					if ($evs) {
 						$test = $evs->parseVideoID($url);
 
@@ -432,7 +432,7 @@ class EmbedVideoHooks {
 	 * @return array	Error Message
 	 */
 	public static function parseEVP($parser) {
-		wfDeprecated(__METHOD__, '2.0', 'EmbedVideo');
+		wfDeprecated(__METHOD__, '2.0', 'EmbedingCode');
 		return self::error('evp_deprecated');
 	}
 
@@ -568,7 +568,7 @@ class EmbedVideoHooks {
 			return self::error('missingparams', $service, $id);
 		}
 
-		self::$service = \EmbedVideo\VideoService::newFromName($service);
+		self::$service = \EmbedingCode\VideoService::newFromName($service);
 		if (!self::$service) {
 			return self::error('service', $service);
 		}
@@ -644,10 +644,10 @@ class EmbedVideoHooks {
 	 * @return string
 	 */
 	private static function generateWrapperHTML($html, $description = null, $addClass = null) {
-		$classString = "embedvideo";
+		$classString = "embedingcode";
 		$styleString = "";
-		$innerClassString = "embedvideowrap";
-		$outerClassString = "embedvideo ";
+		$innerClassString = "embedingcodewrap";
+		$outerClassString = "embedingcode ";
 
 		if (self::getContainer() == 'frame') {
 			$classString .= " thumbinner";
@@ -808,7 +808,7 @@ class EmbedVideoHooks {
 		$arguments = func_get_args();
 		array_shift($arguments);
 
-		$message = wfMessage('error_embedvideo_' . $type, $arguments)->escaped();
+		$message = wfMessage('error_embedingcode_' . $type, $arguments)->escaped();
 
 		return [
 			"<div class='errorbox'>{$message}</div>",

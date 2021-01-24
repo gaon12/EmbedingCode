@@ -29,21 +29,21 @@
 
 ### v2.6.1
 * Added new configuration options to disable adding media handlers and file extensions.
- * https://gitlab.com/hydrawiki/extensions/EmbedVideo/issues/76
+ * https://gitlab.com/hydrawiki/extensions/EmbedingCode/issues/76
 * Fixed an uninitialized array.
- * https://gitlab.com/hydrawiki/extensions/EmbedVideo/issues/77
+ * https://gitlab.com/hydrawiki/extensions/EmbedingCode/issues/77
 * Fixed undefined indexes in the AudioHandler class.
- * https://gitlab.com/hydrawiki/extensions/EmbedVideo/issues/78
+ * https://gitlab.com/hydrawiki/extensions/EmbedingCode/issues/78
 * Fixed class properties that were unintentionally declared as static.
- * https://gitlab.com/hydrawiki/extensions/EmbedVideo/issues/75
+ * https://gitlab.com/hydrawiki/extensions/EmbedingCode/issues/75
 * Fixed RTL language issues with CSS.
- * https://gitlab.com/hydrawiki/extensions/EmbedVideo/pull/73
+ * https://gitlab.com/hydrawiki/extensions/EmbedingCode/pull/73
 
 ### v2.6.0
 * Added support for vertically aligning videos.
 * Improved sizing of video and audio tags in Chrome and Firefox when using the media handler tags.
 * Fixed an undefined variable.
- * https://gitlab.com/hydrawiki/extensions/EmbedVideo/issues/71
+ * https://gitlab.com/hydrawiki/extensions/EmbedingCode/issues/71
 
 ### v2.5.2
 * If ffmpeg is not installed on the server the FFProbe class will no longer attempt to use and instead just return generic descriptions.
@@ -81,7 +81,7 @@
 * Fix auto resize breaking when leaving full screen.
 
 ### v2.3.1
-* Fixed issue #54 (EmbedVideo doesn't work with mw-collapsible class)
+* Fixed issue #54 (EmbedingCode doesn't work with mw-collapsible class)
 * Fixed issue #50 ("arg" should be "args" in addService)
 * Added "inline" alignment option
 * Fixed center alignment option css
@@ -90,26 +90,26 @@
 ### v2.3.0
 * Hard cut off of support for versions older then MediaWiki 1.25
 * Auto Resize attribute added
-* Reverted array_key_exists() regression to fix the `<embedvideo>` tag being broken.
+* Reverted array_key_exists() regression to fix the `<embedingcode>` tag being broken.
 
 ### v2.2.9
 * Fixed issue with Twitch.tv switching over to HTTPS.
 * Added support for http://media.ccc.de
- * https://gitlab.com/hydrawiki/extensions/EmbedVideo/pull/52
+ * https://gitlab.com/hydrawiki/extensions/EmbedingCode/pull/52
 * New services can now be added from other extensions programmatically.
- * https://gitlab.com/hydrawiki/extensions/EmbedVideo/pull/46
+ * https://gitlab.com/hydrawiki/extensions/EmbedingCode/pull/46
 
 ### v2.2.8
 * Support for Daum TVPot
- * https://github.com/Alexia/mediawiki-embedvideo/pull/38
+ * https://github.com/Alexia/mediawiki-embedingcode/pull/38
 * Fix for URL arguments for youtube and youtubeplaylist.
- * https://github.com/Alexia/mediawiki-embedvideo/pull/40
+ * https://github.com/Alexia/mediawiki-embedingcode/pull/40
 * Support for Beam.pro.
 * Support for Hitbox.tv.
 
 ### v2.2.7
 * Compatible with Mediawiki 1.24.0+
- * https://github.com/Alexia/mediawiki-embedvideo/pull/35
+ * https://github.com/Alexia/mediawiki-embedingcode/pull/35
 
 ### v2.2.6
 * NicoNico Video ID fixes; will work with new ID formats.
@@ -129,8 +129,8 @@
 * Updated regular expression replacement pattern for Twitch URLs.  Old Twitch embed URLs do not automatically redirect.
 
 ### v2.2.1
-* Fixed E_NOTICE being thrown for [undefined array indexes](https://github.com/Alexia/mediawiki-embedvideo/issues/25).
-* Back ported some [PHP 5.3 compatibility changes](https://github.com/Alexia/mediawiki-embedvideo/issues/23).  Please note that future releases of EmbedVideo may not support PHP 5.3 as it is an outdated version.  Upgrading to PHP 5.4 at a minimum is recommended.
+* Fixed E_NOTICE being thrown for [undefined array indexes](https://github.com/Alexia/mediawiki-embedingcode/issues/25).
+* Back ported some [PHP 5.3 compatibility changes](https://github.com/Alexia/mediawiki-embedingcode/issues/23).  Please note that future releases of EmbedingCode may not support PHP 5.3 as it is an outdated version.  Upgrading to PHP 5.4 at a minimum is recommended.
 
 ### v2.2.0
 * Fixed a bug with alignment that would cause the left align to not work similar to how Mediawiki handles images and other media.
@@ -151,18 +151,18 @@
 * Fixed context in which resource modules are loaded.  This resolves an issue with CSS not always applying.
 
 ### v2.1.4
-* [Problem with Dailymotion videos // EmbedVideo 2.1.3 (running on MediaWiki 1.23.5)](https://github.com/Alexia/mediawiki-embedvideo/issues/16)  Thanks to [Pierre-Yves](https://github.com/gentilvirus) for reporting this issue.
+* [Problem with Dailymotion videos // EmbedingCode 2.1.3 (running on MediaWiki 1.23.5)](https://github.com/Alexia/mediawiki-embedingcode/issues/16)  Thanks to [Pierre-Yves](https://github.com/gentilvirus) for reporting this issue.
 
 ### v2.1.3
-* [Accidental usage of PHP 5.4+ array syntax would cause a fatal error for older Mediawiki installations.](https://github.com/Alexia/mediawiki-embedvideo/pull/14)  Thanks to [Rich Bowen](https://github.com/rbowen) for reporting and submitting a patch for this issue.
+* [Accidental usage of PHP 5.4+ array syntax would cause a fatal error for older Mediawiki installations.](https://github.com/Alexia/mediawiki-embedingcode/pull/14)  Thanks to [Rich Bowen](https://github.com/rbowen) for reporting and submitting a patch for this issue.
 * Fix for a CSS loading order issue on some wiki configurations.
 
 ### v2.1.2
-* [Missing CSS for right alignment on the default container.](https://github.com/Alexia/mediawiki-embedvideo/issues/12)
-* [Parameters were not being reset between parses.](https://github.com/Alexia/mediawiki-embedvideo/issues/13)
+* [Missing CSS for right alignment on the default container.](https://github.com/Alexia/mediawiki-embedingcode/issues/12)
+* [Parameters were not being reset between parses.](https://github.com/Alexia/mediawiki-embedingcode/issues/13)
 
 ### v2.1.1
-* Fixed a logic issue where the $wgEmbedVideoDefaultWidth global override was not obeyed if the video service specified a default width.
+* Fixed a logic issue where the $wgEmbedingCodeDefaultWidth global override was not obeyed if the video service specified a default width.
 * Actually bumped the version number this time.
 
 ### v2.1
