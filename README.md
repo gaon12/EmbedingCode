@@ -1,10 +1,13 @@
-# About
+# You can read a document in English.
 
-The EmbedVideo Extension is a MediaWiki extension which adds a parser function called #ev for embedding video clips from over 22 popular video sharing services in multiple languages and countries.  It also adds video and audio media handlers to support transforming standard `[[File:Example.mp4]]` file links into embedded HTML5 `<video>` and `<audio>` tags.
+[한국어]
+한국어는 본 저장소보다 [가온 위키](https://www.gaonwiki.com/w/미디어위키/확장기능/EmbedingCode)를 통해 보시는 것을 권장합니다. 본 저장소의 README보다 더 빨리 최신화가 이루어지기 때문입니다.
 
-For more information about EmbedVideo, to download, to contribute, and to report bugs and problems, visit the GitHub project page:
+# 이건 뭐야?
 
-https://gitlab.com/hydrawiki/extensions/EmbedVideo
+이 확장기능은 [미디어위키의 SyntaxHighlight](https://m.mediawiki.org/wiki/Extension:SyntaxHighlight)의 각종 버그에 지쳐 외부 코드 임베딩(Embed) 서비스의 내용을 아이프레임으로 가져오게 하는 확장기능입니다.
+
+[EmbedVideo](https://gitlab.com/hydrawiki/extensions/EmbedVideo) 확장기능을 기잔으로 만들어 졌으며, 라이선스는 이로 인해 MIT 라이선스를 사용합니다.
 
 Issues, bug reports, and feature requests may be created at the issue tracker:
 
@@ -22,9 +25,9 @@ The newer versions of EmbedVideo are intended to be fully backwards-compatible w
 
 # License
 
-EmbedVideo is released under the MIT license
+위에서 설명했듯이 본 확장기능은 [MIT 라이선스](http://www.opensource.org/licenses/mit-license.php)를 사용합니다.
 
-http://www.opensource.org/licenses/mit-license.php
+그 이유는 이 확장기능은 EmbedVideo라는 확장기능을 포크(Fork)하여 만들어졌는데, EmbedVideo 확장기능의 라이선스가 MIT 라이선스이기 때문입니다.
 
 See LICENSE for more details
 
@@ -46,16 +49,16 @@ Downloadable archive packages for numbered releases will also be available from 
 2. Create an EmbedVideo folder in the extensions/ folder of your MediaWiki installation.
 3. Copy the contents of this distribution into that folder
 
-For Mediawiki 1.19 through 1.23 add the following line to your LocalSettings.php:
+미디어위키 버전이 1.19 ~ 1.23 인 경우(드뭅니다...) LocalSettings.php 파일에 아래의 내용을 넣어주세요.
 
 ```php
-require_once("$IP/extensions/EmbedVideo/EmbedVideo.php");
+require_once("$IP/extensions/EmbedVideo/EmbedingCode.php");
 ```
 
-For Mediawiki 1.24 and up add the following line to your LocalSettings.php:
+미디어위키 버전이 1.24 버전 이후를 사용하는 경우(대부분), LocalSettings.php 파일에 아래의 내용을 넣어주세요.
 
 ```php
-wfLoadExtension("EmbedVideo");
+wfLoadExtension("EmbedingCode");
 ```
 
 # Usage
