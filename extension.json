@@ -28,7 +28,7 @@
 		"ApiEmbedingCode": "classes/ApiEmbedingCode.php",
 		"EmbedingCode\\OEmbed": "classes/OEmbed.php",
 		"EmbedingCode\\VideoService": "classes/VideoService.php",
-		"EmbedingCode\\FFProbe": "classes/media/FFProbe.php",
+		"EmbedingCode\\FFProbes": "classes/media/FFProbes.php",
 		"EmbedingCode\\AudioHandler": "classes/media/AudioHandler.php",
 		"EmbedingCode\\AudioTransformOutput": "classes/media/AudioTransformOutput.php",
 		"EmbedingCode\\VideoHandler": "classes/media/VideoHandler.php",
@@ -80,7 +80,7 @@
 		"EmbedingCodeAddFileExtensions": true,
 		"EmbedingCodeEnableVideoHandler": true,
 		"EmbedingCodeEnableAudioHandler": true,
-		"FFprobeLocation": "/usr/bin/ffprobe"
+		"FFProbesLocation": "/usr/bin/FFProbes"
 	},
 	"Hooks": {
 		"ParserFirstCallInit": [

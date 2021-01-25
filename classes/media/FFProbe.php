@@ -1,7 +1,7 @@
 <?php
 /**
  * EmbedingCode
- * FFProbe
+ * FFProbes
  *
  * @author  Alexia E. Smith
  * @license MIT
@@ -11,7 +11,7 @@
 
 namespace EmbedingCode;
 
-class FFProbe {
+class FFProbes {
 	/**
 	 * MediaWiki File
 	 *
@@ -45,7 +45,7 @@ class FFProbe {
 	 */
 	public function getMetaData() {
 		if (!is_array($this->metadata)) {
-			$this->invokeFFProbe();
+			$this->invokeFFProbes();
 		}
 		return $this->metadata;
 	}
@@ -120,20 +120,20 @@ class FFProbe {
 	}
 
 	/**
-	 * Invoke ffprobe on the command line.
+	 * Invoke FFProbes on the command line.
 	 *
 	 * @access private
 	 * @return boolean	Success
 	 */
-	private function invokeFFProbe() {
-		global $wgFFprobeLocation;
+	private function invokeFFProbes() {
+		global $wgFFProbesLocation;
 
-		if (!file_exists($wgFFprobeLocation)) {
+		if (!file_exists($wgFFProbesLocation)) {
 			$this->metadata = [];
 			return false;
 		}
 
-		$json = shell_exec(escapeshellcmd($wgFFprobeLocation . ' -v quiet -print_format json -show_format -show_streams ') . escapeshellarg($this->getFilePath()));
+		$json = shell_exec(escapeshellcmd($wgFFProbesLocation . ' -v quiet -print_format json -show_format -show_streams ') . escapeshellarg($this->getFilePath()));
 
 		$metadata = @json_decode($json, true);
 
@@ -159,7 +159,7 @@ class StreamInfo {
 	 * Main Constructor
 	 *
 	 * @access public
-	 * @param  array	Stream Info from FFProbe
+	 * @param  array	Stream Info from FFProbes
 	 * @return void
 	 */
 	public function __construct($info) {
@@ -270,7 +270,7 @@ class FormatInfo {
 	 * Main Constructor
 	 *
 	 * @access public
-	 * @param  array	Format Info from FFProbe
+	 * @param  array	Format Info from FFProbes
 	 * @return void
 	 */
 	public function __construct($info) {

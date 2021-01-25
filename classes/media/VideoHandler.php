@@ -98,7 +98,7 @@ class VideoHandler extends AudioHandler {
 	 * @return mixed	An array following the format of PHP getimagesize() internal function or false if not supported.
 	 */
 	public function getImageSize($file, $path) {
-		$probe = new FFProbe($file);
+		$probe = new FFProbes($file);
 
 		$stream = $probe->getStream("v:0");
 
@@ -141,7 +141,7 @@ class VideoHandler extends AudioHandler {
 	public function getDimensionsString($file) {
 		global $wgLang;
 
-		$probe = new FFProbe($file);
+		$probe = new FFProbes($file);
 
 		$format = $probe->getFormat();
 		$stream = $probe->getStream("v:0");
@@ -163,7 +163,7 @@ class VideoHandler extends AudioHandler {
 	public function getShortDesc($file) {
 		global $wgLang;
 
-		$probe = new FFProbe($file);
+		$probe = new FFProbes($file);
 
 		$format = $probe->getFormat();
 		$stream = $probe->getStream("v:0");
@@ -185,7 +185,7 @@ class VideoHandler extends AudioHandler {
 	public function getLongDesc($file) {
 		global $wgLang;
 
-		$probe = new FFProbe($file);
+		$probe = new FFProbes($file);
 
 		$format = $probe->getFormat();
 		$stream = $probe->getStream("v:0");
