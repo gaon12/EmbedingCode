@@ -29,8 +29,8 @@ class VideoService {
 				'#^([\d\w\-_][^/\?\#]+)$#is'
 			]
 		],
-		'bambuser' => [
-			'embed'			=> '<iframe title="%4$s" src="//embed.bambuser.com/broadcast/%1$s" width="%2$d" height="%3$d" frameborder="0" allowfullscreen="true"></iframe>',
+		'jsfiddle' => [
+			'embed'			=> '<iframe title="%4$s"  src="//jsfiddle.net/%1$s/embedded/result,js,html,css/" width="%2$d" height="%3$d" frameborder="0" allowfullscreen="true"></iframe>',
 			'default_width'	=> 640,
 			'default_ratio' => 1.2994923857868, // (640 / 493)
 			'https_enabled'	=> true,
@@ -516,7 +516,8 @@ class VideoService {
 	 */
 	static private $serviceHostMap = [
 		'archive.org'				=> 'archiveorg',
-		'embed.bambuser.com'		=> ['bambuser', 'bambuser_channel'],
+		'jsfiddle'				=> 'jsfiddle',
+		'embed.bambuser.com'		=> 'bambuser_channel',
 		'beam.pro' 					=> 'beam',
 		'blip.tv'					=> 'blip',
 		'bing.com'					=> 'bing',
