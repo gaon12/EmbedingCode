@@ -38,7 +38,7 @@
 		"embedingcode": "ApiEmbedingCode"
 	},
 	"ResourceModules": {
-		"ext.embedVideo": {
+		"ext.embedingCodr": {
 			"scripts": [
 				"js/autoResize.js"
 			],
@@ -48,7 +48,7 @@
 				"mobile"
 			]
 		},
-		"ext.embedVideo-evl": {
+		"ext.embedingCode-evl": {
 			"scripts": [
 				"js/evlPlayer.js"
 			],
@@ -59,10 +59,10 @@
 			],
 			"dependencies": [
 				"mediawiki.api",
-				"ext.embedVideo"
+				"ext.embedingCode"
 			]
 		},
-		"ext.embedVideo.styles": {
+		"ext.embedingCode.styles": {
 			"styles": [
 				"css/embedingcode.css"
 			],

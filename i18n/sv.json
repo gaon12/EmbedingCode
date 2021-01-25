@@ -4,15 +4,15 @@
 			"Andreas Jonsson"
 		]
 	},
-	"embedvideo_description": "Adds a parser function embedding video from popular sources.",
-	"error_embedvideo_missingparams": "EmbedVideo - En obligatorisk parameter har utelämnats.  De två första parametrarna, service och id, som anger videotjänst respektive videoidentitet är obligatoriska",
-	"error_embedvideo_service": "EmbedVideo - Känner inte till videotjänsten \"$1\".",
-	"error_embedvideo_id": "EmbedVideo - Felaktig id \"$2\" för tjänsten \"$1\" har angivits.",
-	"error_embedvideo_width": "EmbedVideo - Felaktigt värde \"$1\" har angivits som bredd.",
-	"error_embedvideo_height": "EmbedVideo - Felaktigt värde \"$1\" har angivits som höjd.",
-	"error_embedvideo_alignment": "EmbedVideo - Felaktigt värde har angivits som placering: \"$1\".  Korrekta värden är \"right\" för högerställd, \"left\" för vänsterställd, \"center\" för centrerad.",
-	"error_embedvideo_urlargs": "EmbedVideo received a list of URL arguments that contained malformed data or blank arguments.",
-	"error_embedvideo_unknown": "EmbedVideo encountered an unknown error while trying to generate this video embed block.  ($1)",
-	"error_embedvideo_evp_deprecated": "The #evp parser function was deprecated in EmbedVideo 2.0.  Please convert your parser function tag to #ev.",
-	"error_embedvideo_container": "The parameter provided for 'container' is invalid."
+	"EmbedingCode_description": "Adds a parser function embedding video from popular sources.",
+	"error_EmbedingCode_missingparams": "EmbedingCode - En obligatorisk parameter har utelämnats.  De två första parametrarna, service och id, som anger videotjänst respektive videoidentitet är obligatoriska",
+	"error_EmbedingCode_service": "EmbedingCode - Känner inte till videotjänsten \"$1\".",
+	"error_EmbedingCode_id": "EmbedingCode - Felaktig id \"$2\" för tjänsten \"$1\" har angivits.",
+	"error_EmbedingCode_width": "EmbedingCode - Felaktigt värde \"$1\" har angivits som bredd.",
+	"error_EmbedingCode_height": "EmbedingCode - Felaktigt värde \"$1\" har angivits som höjd.",
+	"error_EmbedingCode_alignment": "EmbedingCode - Felaktigt värde har angivits som placering: \"$1\".  Korrekta värden är \"right\" för högerställd, \"left\" för vänsterställd, \"center\" för centrerad.",
+	"error_EmbedingCode_urlargs": "EmbedingCode received a list of URL arguments that contained malformed data or blank arguments.",
+	"error_EmbedingCode_unknown": "EmbedingCode encountered an unknown error while trying to generate this video embed block.  ($1)",
+	"error_EmbedingCode_evp_deprecated": "The #evp parser function was deprecated in EmbedingCode 2.0.  Please convert your parser function tag to #ev.",
+	"error_EmbedingCode_container": "The parameter provided for 'container' is invalid."
 }

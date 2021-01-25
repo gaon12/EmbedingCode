@@ -1,14 +1,14 @@
 <?php
 /**
- * EmbedVideo
- * EmbedVideo VideoService Class
+ * EmbedingCode
+ * EmbedingCode VideoService Class
  *
  * @license MIT
- * @package EmbedVideo
- * @link    https://www.mediawiki.org/wiki/Extension:EmbedVideo
+ * @package EmbedingCode
+ * @link    https://www.mediawiki.org/wiki/Extension:EmbedingCode
  **/
 
-namespace EmbedVideo;
+namespace EmbedingCode;
 
 class VideoService {
 	/**
@@ -829,24 +829,24 @@ class VideoService {
 	 * @return void
 	 */
 	public function setWidth($width = null) {
-		global $wgEmbedVideoMinWidth, $wgEmbedVideoMaxWidth, $wgEmbedVideoDefaultWidth;
+		global $wgEmbedingCodeMinWidth, $wgEmbedingCodeMaxWidth, $wgEmbedingCodeDefaultWidth;
 
 		if (!is_numeric($width)) {
-			if ($width === null && $this->getDefaultWidth() !== false && $wgEmbedVideoDefaultWidth < 1) {
+			if ($width === null && $this->getDefaultWidth() !== false && $wgEmbedingCodeDefaultWidth < 1) {
 				$width = $this->getDefaultWidth();
 			} else {
-				$width = ($wgEmbedVideoDefaultWidth > 0 ? $wgEmbedVideoDefaultWidth : 640);
+				$width = ($wgEmbedingCodeDefaultWidth > 0 ? $wgEmbedingCodeDefaultWidth : 640);
 			}
 		} else {
 			$width = intval($width);
 		}
 
-		if ($wgEmbedVideoMaxWidth > 0 && $width > $wgEmbedVideoMaxWidth) {
-			$width = $wgEmbedVideoMaxWidth;
+		if ($wgEmbedingCodeMaxWidth > 0 && $width > $wgEmbedingCodeMaxWidth) {
+			$width = $wgEmbedingCodeMaxWidth;
 		}
 
-		if ($wgEmbedVideoMinWidth > 0 && $width < $wgEmbedVideoMinWidth) {
-			$width = $wgEmbedVideoMinWidth;
+		if ($wgEmbedingCodeMinWidth > 0 && $width < $wgEmbedingCodeMinWidth) {
+			$width = $wgEmbedingCodeMinWidth;
 		}
 		$this->width = $width;
 

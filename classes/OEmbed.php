@@ -1,14 +1,14 @@
 <?php
 /**
- * EmbedVideo
- * EmbedVideo OEmbed Class
+ * EmbedingCode
+ * EmbedingCode OEmbed Class
  *
  * @license MIT
- * @package EmbedVideo
- * @link    https://www.mediawiki.org/wiki/Extension:EmbedVideo
+ * @package EmbedingCode
+ * @link    https://www.mediawiki.org/wiki/Extension:EmbedingCode
  **/
 
-namespace EmbedVideo;
+namespace EmbedingCode;
 
 class OEmbed {
 	/**
@@ -209,7 +209,7 @@ class OEmbed {
 		$ch = curl_init();
 
 		$timeout = 10;
-		$useragent = "EmbedVideo/1.0/" . $wgServer;
+		$useragent = "EmbedingCode/1.0/" . $wgServer;
 		$dateTime = gmdate("D, d M Y H:i:s", time()) . " GMT";
 		$headers = ['Date: ' . $dateTime];
 

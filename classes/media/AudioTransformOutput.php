@@ -1,15 +1,15 @@
 <?php
 /**
- * EmbedVideo
+ * EmbedingCode
  * AudioTransformOutput Class
  *
  * @author  Alexia E. Smith
  * @license MIT
- * @package EmbedVideo
- * @link    https://www.mediawiki.org/wiki/Extension:EmbedVideo
+ * @package EmbedingCode
+ * @link    https://www.mediawiki.org/wiki/Extension:EmbedingCode
  **/
 
-namespace EmbedVideo;
+namespace EmbedingCode;
 
 use Html;
 

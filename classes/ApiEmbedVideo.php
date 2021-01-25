@@ -1,19 +1,19 @@
 <?php
 /**
- * EmbedVideo
- * ApiEmbedVideo class
+ * EmbedingCode
+ * ApiEmbedingCode class
  *
  * @license MIT
- * @package EmbedVideo
- * @link    https://gitlab.com/hydrawiki/extensions/EmbedVideo
+ * @package EmbedingCode
+ * @link    https://gitlab.com/hydrawiki/extensions/EmbedingCode
  **/
 
-class ApiEmbedVideo extends ApiBase {
+class ApiEmbedingCode extends ApiBase {
 	/**
 	 * Execute the API call.
 	 */
 	public function execute() {
-		$getHTML = \EmbedVideoHooks::parseEV(
+		$getHTML = \EmbedingCodeHooks::parseEV(
 			null,
 			$this->getMain()->getVal('service'),
 			$this->getMain()->getVal('id'),

@@ -284,7 +284,7 @@ class EmbedingCodeHooks {
 			'class' => 'embedingcode-evl vplink'
 		], $options['linktitle']);
 
-		$parser->getOutput()->addModules(['ext.embedVideo-evl', 'ext.embedVideo.styles']);
+		$parser->getOutput()->addModules(['ext.EmbedingCode-evl', 'ext.EmbedingCode.styles']);
 
 		return [$link, 'noparse' => true, 'isHTML' => true];
 	}
@@ -622,8 +622,8 @@ class EmbedingCodeHooks {
 		if ($parser) {
 			// dont call this if parser is null (such as in API usage).
 			$out = $parser->getOutput();
-			$out->addModules('ext.embedVideo');
-			$out->addModuleStyles('ext.embedVideo.styles');
+			$out->addModules('ext.EmbedingCode');
+			$out->addModuleStyles('ext.EmbedingCode.styles');
 		}
 
 		return [

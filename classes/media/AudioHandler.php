@@ -1,15 +1,15 @@
 <?php
 /**
- * EmbedVideo
+ * EmbedingCode
  * AudioHandler Class
  *
  * @author  Alexia E. Smith
  * @license MIT
- * @package EmbedVideo
- * @link    https://www.mediawiki.org/wiki/Extension:EmbedVideo
+ * @package EmbedingCode
+ * @link    https://www.mediawiki.org/wiki/Extension:EmbedingCode
  **/
 
-namespace EmbedVideo;
+namespace EmbedingCode;
 
 class AudioHandler extends \MediaHandler {
 	/**
@@ -103,12 +103,12 @@ class AudioHandler extends \MediaHandler {
 	 * @return boolean	Success
 	 */
 	public function normaliseParams($file, &$parameters) {
-		global $wgEmbedVideoDefaultWidth;
+		global $wgEmbedingCodeDefaultWidth;
 
 		if (isset($parameters['width']) && $parameters['width'] > 0) {
 			$parameters['width'] = intval($parameters['width']);
 		} else {
-			$parameters['width'] = $wgEmbedVideoDefaultWidth;
+			$parameters['width'] = $wgEmbedingCodeDefaultWidth;
 		}
 
 		if (isset($parameters['start'])) {

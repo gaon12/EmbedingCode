@@ -1,11 +1,11 @@
 (function(mw, $, window) {
 	$(function() {
 		api = new mw.Api();
-		$('a.embedvideo-evl').click(function(e){
+		$('a.EmbedingCode-evl').click(function(e){
 			e.preventDefault();
 
 			var data = $(this).data('video-json');
-			data['action'] = 'embedvideo';
+			data['action'] = 'EmbedingCode';
 			if (typeof data['player'] === 'undefined') {
 				data['player'] = 'default';
 			}
@@ -21,8 +21,8 @@
 			}
 			api.get( data )
 			.done( function( res ) {
-				if (typeof res.embedvideo.html !== 'undefined') {
-					content = res.embedvideo.html;
+				if (typeof res.EmbedingCode.html !== 'undefined') {
+					content = res.EmbedingCode.html;
 				} else {
 					content = "There was an error while loading this video";
 				}
