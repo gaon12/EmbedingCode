@@ -35,7 +35,7 @@ class VideoService {
 			'default_ratio' => 1.2994923857868, // (640 / 493)
 			'https_enabled'	=> true,
 			'url_regex'		=> [
-				'#bambuser\.com/(?:v|broadcast)/([\d\w\-\+]+)(?:/\S+?)?#is'
+				'#jsfiddle\.net/([a-zA-Z0-9]+)/(?:/\S+?)/embedded/rrsult,js,html,css/#is'
 			],
 			'id_regex'		=> [
 				'#^([\d\w\-\+]+)$#is'
